@@ -1,1 +1,0 @@
-gcc loader64.c gopt.c -o loader64 -lusb-1.0 -lftdi1

@@ -1,65 +1,52 @@
-# loader64
-loader64 - Everdrive64 USB-tool v0.1
+# Loader 64
 
-OS64 compatible USB upload tool
+A simple command line tool for uploading data to the EverDrive-64.
 
-by saturnu <tt@anpa.nl>
+This is based on code by saturnu `<tt@anpa.nl>`, which was originally shared at:
+http://krikzz.com/forum/index.php?topic=1407.msg14076
 
-originally from http://krikzz.com/forum/index.php?topic=1407.msg14076
+It was later updated by James Friend (https://github.com/jsdf/loader64) to work on macOS.
 
-forked by @jsdf to add macOS compatibility
+This version includes various changes to make it work with EverDrive OS V3.05, and to simplify the command line interface.
 
-## macOS instructions
+## macOS
 
-### building from source
+### Build from source
 
-install required libraries from homebrew:
+Install required libraries from Homebrew:
 
 ```bash
 brew install libftdi libusb
 ```
 
-- in XCode, open [xcode/loader64.xcodeproj](xcode/loader64.xcodeproj)
-
-- by default, building will install loader64 to `/usr/local/bin`. If you want to change this, in the loader64 target's build phases tab, change the 'copy files' command output path to where you want the loader64 binary installed
-
-- click 'run' to build and install loader64 binary
-
-### usage
-
-uploading and booting a rom:
+Build the `loader64` executable:
 
 ```bash
-# upload rom
-./loader64 -v --write --file somerom.n64
-
-# boot rom that was uploaded
-./loader64 -v --pifboot
+make loader64
 ```
 
+Load a ROM:
 
-## linux instructions
-please run as root
+```bash
+./loader64 -v -f myRom.n64
+```
 
-install `libftdi` from your package manager of choice (including headers). eg for ubuntu:
+## Linux
+
+Install `libftdi` from your package manager of choice (including headers). For example (on Ubuntu):
 
 ```bash
 sudo apt-get install libftdi1 libftdi1-dev
 ```
 
+Build the `loader64` executable:
+
 ```bash
-./make.sh
+make loader64
 ```
 
-- examples -
-
-upload rom:
+Load a ROM:
 
 ```bash
-sudo ./loader64 -vwf somerom.v64
-```
-
-boot rom:
-```bash
-sudo ./loader64 -vp
+./loader64 -v -f myRom.n64
 ```
