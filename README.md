@@ -11,8 +11,6 @@ This version includes various changes to make it work with EverDrive OS V3.05, a
 
 ## macOS
 
-### Build from source
-
 Install required libraries from Homebrew:
 
 ```bash
@@ -50,3 +48,19 @@ Load a ROM:
 ```bash
 ./loader64 -v -f myRom.n64
 ```
+
+## Usage
+
+This version of loader64 is very easy to use:
+
+```
+loader64 - Everdrive64 USB-tool
+
+ -h, --help            display this help and exit
+ -v, --verbose         verbose
+ -f, --file=rom.z64    write rom to sdram
+ ```
+
+## License
+
+The original version of loader64 was released without a license, so I assume it is considered public domain.
