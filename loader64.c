@@ -20,7 +20,7 @@
 
 #include <libftdi1/ftdi.h>
 
-#include "gopt.h"
+#include "gopt/gopt.h"
 
 #define FILE_CHUNK 0x8000
 #define USB_VENDOR 0x0403
